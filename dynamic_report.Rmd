@@ -38,7 +38,7 @@ Using these data in below
 library(tidyverse)
 
 # reading the csv
-logged_data <- read_csv("~/Desktop/stats220/project2/bus_survey.csv")
+logged_data <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vQaGPuRfA40sl4h8SLumTAInuHwnrnFacv_lrN3EznBW_AXgeHUROuesVStA97zyfFPvNEoajxNmyZs/pub?gid=1011240343&single=true&output=csv")
 
 # Rename variables to cleaner names
 latest_data <- logged_data %>%
