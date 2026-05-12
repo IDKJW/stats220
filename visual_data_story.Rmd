@@ -1,0 +1,93 @@
+---
+title: How crowdness affect bus travel time from home to University 
+output: html_document
+---
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE)
+```
+
+```{js}
+$(function() {
+  $(".level2").css('visibility', 'hidden');
+  $(".level2").first().css('visibility', 'visible');
+  $(".container-fluid").height($(".container-fluid").height() + 300);
+  $(window).on('scroll', function() {
+    $('h2').each(function() {
+      var h2Top = $(this).offset().top - $(window).scrollTop();
+      var windowHeight = $(window).height();
+      if (h2Top >= 0 && h2Top <= windowHeight / 2) {
+        $(this).parent('div').css('visibility', 'visible');
+      } else if (h2Top > windowHeight / 2) {
+        $(this).parent('div').css('visibility', 'hidden');
+      }
+    });
+  });
+})
+```
+
+```{css echo=FALSE}
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+  margin: 20px;
+  background-color: #ece7f2;
+}
+
+h1.title {
+  color: #a6bddb;
+}
+
+h2 {
+  color: #2b8cbe;
+  border-bottom: 2px solid #a6bddb;
+  padding-bottom: 4px;
+}
+```
+
+
+
+## Introduction
+Public transport is a very imporant role in daily travling life all around New Zealand. However, traveling time can be depedning on factos such as crowd levels and the day of the week. 
+
+The data will be exploring the patterns in bus travle time using survey data collected from day to day from me. 
+The analysis focuses on:
+
+how crowding affects travel duration
+how travel times are distributed overall
+which weekdays experience longer average trips
+
+## Travel Time and Bus Crowdedness
+![](plot1.png) 
+This graph compares the average travel time for different levels of bus crowdedness.
+
+From the graph we can see that buses with higher crowding generally experience longer travel times. The most crowded buses record for average travel time is around 75 minutes and while the bus with less crowdedness averaged around 55 minutes. 
+
+We can see this patteren may reflect delays caused by increased passenger numbers and heavier traffic during these time. 
+
+## Distribution of Bus Travel Times
+![alt text](plot2.png)
+This histogram shows the overall distribution of travel times recorded in the dataset.
+
+Most of the travel time is between 55 and 80 minutes which means that this is the around theses time is how long from home to university. There also a small number of longer trips which is longer than 90 minutes which may represent I either miss the bus or the bus is delay or weather is very bad with the traffic.  
+
+This shows that most bus trips take a similar amount of time but some trips can stil take longer due to unexpected events. 
+
+
+## Average Travel Time by Weekday
+![alt text](plot3.png)
+This chart compares average bus travel times across the days of the week.
+
+Wednesday shows the highest average travel time and then followed by Monday and Saturday. Friday and Sunday showed slightly lower travel times overall.
+
+There may be some difference between weekdays are not extremely large but the results suggest that morning travveling time and traffic conditions can be depend upon. 
+
+## Conclusion
+
+This analysis highlights several important patterns in Auckland bus travel.
+
+The higher bus crowdedness is the  longer travel times is. Most bus journeys take between 55 and 80 minutes. Travel times vary slightly across weekdays, with midweek travel appearing slower. This helps me to know what days has the highest travel depends on the events. 
+
+
